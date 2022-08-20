@@ -6,17 +6,6 @@
 <img src="https://img.shields.io/badge/gorm-1.22.5-red"/>
 </div>
 
-# 重要提示
-
-1.本项目从起步到开发到部署均有文档和详细视频教程
-
-2.本项目需要您有一定的golang和vue基础
-
-3.您完全可以通过我们的教程和文档完成一切操作，因此我们不再提供免费的技术服务，如需服务请进行[付费支持](https://www.lzs-go-admin.com/coffee/payment.html)
-
-4.如果您将此项目用于商业用途，请遵守Apache2.0协议并保留作者技术支持声明。您需保留如下版权声明信息，其余信息功能不做任何限制。如需剔除请[购买授权](https://www.lzs-go-admin.com/empower/index.html)
-
-
 ## 1. 基本介绍
 
 ### 1.1 项目介绍
@@ -169,9 +158,9 @@ swag init
 
 ### 4.1 系统架构图
 
-![系统架构图](http://qmplusimg.henrongyi.top/gva/lzs-go-admin.png)
+![系统架构图](http://qmplusimg.henrongyi.top/gva/gin-vue-admin.png)
 
-### 4.2 前端详细设计图 （提供者:<a href="https://github.com/baobeisuper">baobeisuper</a>）
+### 4.2 前端详细设计图
 
 ![前端详细设计图](http://qmplusimg.henrongyi.top/naotu.png)
 
