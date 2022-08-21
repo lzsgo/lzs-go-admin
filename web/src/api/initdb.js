@@ -24,3 +24,15 @@ export const checkDB = () => {
     method: 'post'
   })
 }
+
+// @Tags resetDB
+// @Summary 重置数据库
+// @Produce  application/json
+// @Success 200 {string} string "{"code":0,"data":{},"msg":"探测完成"}"
+// @Router /init/checkdb [post]
+export const resetDB = () => {
+  return service({
+    url: '/init/resetdb',
+    method: 'post'
+  })
+}

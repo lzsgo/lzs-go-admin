@@ -1,6 +1,7 @@
 package system
 
 import (
+	"fmt"
 	"github.com/lzsgo/lzs-go-admin/server/global"
 	"github.com/lzsgo/lzs-go-admin/server/model/common/response"
 	"github.com/lzsgo/lzs-go-admin/server/model/system/request"
@@ -56,4 +57,37 @@ func (i *DBApi) CheckDB(c *gin.Context) {
 	}
 	global.GVA_LOG.Info(message)
 	response.OkWithDetailed(gin.H{"needInit": needInit}, message, c)
+}
+
+// ResetDB
+// @Tags ResetDB
+// @Summary 重置数据库
+// @Produce  application/json
+// @Success 200 {object} response.Response{data=map[string]interface{},msg=string} "初始化用户数据库"
+// @Router /init/resetDB [post]
+func (i *DBApi) ResetDB(c *gin.Context) {
+
+	if global.GVA_DB == nil {
+		response.FailWithMessage("请先初始化数据库", c)
+		return
+	} else {
+		deleteDatabaseSql := fmt.Sprintf("DROP DATABASE `%s`", global.GVA_CONFIG.Mysql.Dbname)
+		global.GVA_DB.Exec(deleteDatabaseSql)
+		dbInfo := request.InitDB{
+			DBType:   "mysql",
+			Host:     global.GVA_CONFIG.Mysql.Path,
+			Port:     global.GVA_CONFIG.Mysql.Port,
+			UserName: global.GVA_CONFIG.Mysql.Username,
+			Password: global.GVA_CONFIG.Mysql.Password,
+			DBName:   global.GVA_CONFIG.Mysql.Dbname,
+		}
+		if err := initDBService.InitDB(dbInfo); err != nil {
+			global.GVA_LOG.Error("自动创建数据库失败!", zap.Error(err))
+			response.FailWithMessage("自动创建数据库失败，请查看后台日志，检查后在进行初始化", c)
+			return
+		}
+		response.OkWithMessage("重置成功", c)
+		return
+	}
+
 }
