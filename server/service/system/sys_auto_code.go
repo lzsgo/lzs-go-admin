@@ -234,7 +234,7 @@ func makeDictTypes(autoCode *system.AutoCodeStruct) {
 	}
 }
 
-//@author: [piexlmax](https://github.com/piexlmax)
+//@author: [LzsGo]
 //@function: CreateTemp
 //@description: 创建代码
 //@param: model.AutoCodeStruct
@@ -365,7 +365,7 @@ func (autoCodeService *AutoCodeService) CreateTemp(autoCode system.AutoCodeStruc
 	return nil
 }
 
-//@author: [piexlmax](https://github.com/piexlmax)
+//@author: [LzsGo]
 //@function: GetAllTplFile
 //@description: 获取 pathName 文件夹下所有 tpl 文件
 //@param: pathName string, fileList []string
@@ -388,7 +388,7 @@ func (autoCodeService *AutoCodeService) GetAllTplFile(pathName string, fileList 
 	return fileList, err
 }
 
-//@author: [piexlmax](https://github.com/piexlmax)
+//@author: [LzsGo]
 //@function: GetDB
 //@description: 获取指定数据库和指定数据表的所有字段名,类型值等
 //@param: tableName string, dbName string
@@ -443,7 +443,7 @@ func (autoCodeService *AutoCodeService) addAutoMoveFile(data *tplData) {
 	}
 }
 
-//@author: [piexlmax](https://github.com/piexlmax)
+//@author: [LzsGo]
 //@author: [SliverHorn](https://github.com/SliverHorn)
 //@function: CreateApi
 //@description: 自动创建api数据,

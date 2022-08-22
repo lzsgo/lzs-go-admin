@@ -12,7 +12,7 @@ import (
 
 type CasbinApi struct{}
 
-// @Tags Casbin
+// UpdateCasbin @Tags Casbin
 // @Summary 更新角色api权限
 // @Security ApiKeyAuth
 // @accept application/json

@@ -15,7 +15,7 @@ import (
 
 type AuthorityMenuApi struct{}
 
-// @Tags AuthorityMenu
+// GetMenu @Tags AuthorityMenu
 // @Summary 获取用户动态路由
 // @Security ApiKeyAuth
 // @Produce  application/json
@@ -34,7 +34,7 @@ func (a *AuthorityMenuApi) GetMenu(c *gin.Context) {
 	}
 }
 
-// @Tags AuthorityMenu
+// GetBaseMenuTree @Tags AuthorityMenu
 // @Summary 获取用户动态路由
 // @Security ApiKeyAuth
 // @Produce  application/json

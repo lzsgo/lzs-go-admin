@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-//@author: [piexlmax](https://github.com/piexlmax)
+//@author: [LzsGo]
 //@function: ZipFiles
 //@description: 压缩文件
 //@param: filename string, files []string, oldForm, newForm string
