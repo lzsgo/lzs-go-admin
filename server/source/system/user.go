@@ -44,14 +44,12 @@ func (i *initUser) InitializeData(ctx context.Context) (next context.Context, er
 	if !ok {
 		return ctx, system.ErrMissingDBContext
 	}
-	password := utils.BcryptHash("lishier")
-	adminPassword := utils.BcryptHash("lishier")
 
 	entities := []sysModel.SysUser{
 		{
 			UUID:        uuid.NewV4(),
 			Username:    "admin",
-			Password:    adminPassword,
+			Password:    utils.BcryptHash("lishier"),
 			NickName:    "李十二",
 			HeaderImg:   "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJ5Ozf1ziaeRmMcxDnsAuu8QOqdtAQ8OMt2BMQRldfshgpQnaga1bQwH9mJQeykZQK2cDn4IBnrmJw/132",
 			AuthorityId: 888,
@@ -61,7 +59,7 @@ func (i *initUser) InitializeData(ctx context.Context) (next context.Context, er
 		{
 			UUID:        uuid.NewV4(),
 			Username:    "a303176530",
-			Password:    password,
+			Password:    utils.BcryptHash("lishier"),
 			NickName:    "lishier_plus_User",
 			HeaderImg:   "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKaf4N9IvVDRxzBr1FIeE4UhZd6kZ2Ngq3qBmu3FiaGlfhDmfnCu98larMP5MnPq8iaESZb1p0Zwsqw/132",
 			AuthorityId: 9528,
