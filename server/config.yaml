@@ -80,10 +80,10 @@ hua-wei-obs:
   access-key: you-access-key
   secret-key: you-secret-key
 jwt:
-  signing-key: b040aa9c-ec54-4fee-9556-8670e8a9d50c
+  signing-key: cc29da34-5d76-41f1-b4c4-2ff441bb4579
   expires-time: 604800
   buffer-time: 86400
-  issuer: qmPlus
+  issuer: LzsGo
 local:
   path: uploads/file
   store-path: uploads/file

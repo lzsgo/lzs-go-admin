@@ -8,8 +8,8 @@ type Register struct {
 	Password     string `json:"passWord"`
 	Phone        string `json:"phone"  gorm:"comment:用户手机号"`
 	Email        string `json:"email"  gorm:"comment:用户邮箱"`
-	NickName     string `json:"nickName" gorm:"default:'QMPlusUser'"`
-	HeaderImg    string `json:"headerImg" gorm:"default:'https://qmplusimg.henrongyi.top/gva_header.jpg'"`
+	NickName     string `json:"nickName" gorm:"default:'LzsGoUser'"`
+	HeaderImg    string `json:"headerImg" gorm:"default:'https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJ5Ozf1ziaeRmMcxDnsAuu8QOqdtAQ8OMt2BMQRldfshgpQnaga1bQwH9mJQeykZQK2cDn4IBnrmJw/132'"`
 	AuthorityId  uint   `json:"authorityId" gorm:"default:888"`
 	Enable       int    `json:"enable"`
 	AuthorityIds []uint `json:"authorityIds"`
@@ -42,13 +42,13 @@ type SetUserAuthorities struct {
 }
 
 type ChangeUserInfo struct {
-	ID           uint                 `gorm:"primarykey"`                                                                           // 主键ID
-	NickName     string               `json:"nickName" gorm:"default:系统用户;comment:用户昵称"`                                            // 用户昵称
-	Phone        string               `json:"phone"  gorm:"comment:用户手机号"`                                                          // 用户手机号
-	AuthorityIds []uint               `json:"authorityIds" gorm:"-"`                                                                // 角色ID
-	Email        string               `json:"email"  gorm:"comment:用户邮箱"`                                                           // 用户邮箱
-	HeaderImg    string               `json:"headerImg" gorm:"default:https://qmplusimg.henrongyi.top/gva_header.jpg;comment:用户头像"` // 用户头像
-	SideMode     string               `json:"sideMode"  gorm:"comment:用户侧边主题"`                                                      // 用户侧边主题
-	Enable       int                  `json:"enable" gorm:"comment:冻结用户"`                                                           //冻结用户
+	ID           uint                 `gorm:"primarykey"`                                                                                                                                                              // 主键ID
+	NickName     string               `json:"nickName" gorm:"default:系统用户;comment:用户昵称"`                                                                                                                               // 用户昵称
+	Phone        string               `json:"phone"  gorm:"comment:用户手机号"`                                                                                                                                             // 用户手机号
+	AuthorityIds []uint               `json:"authorityIds" gorm:"-"`                                                                                                                                                   // 角色ID
+	Email        string               `json:"email"  gorm:"comment:用户邮箱"`                                                                                                                                              // 用户邮箱
+	HeaderImg    string               `json:"headerImg" gorm:"default:https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJ5Ozf1ziaeRmMcxDnsAuu8QOqdtAQ8OMt2BMQRldfshgpQnaga1bQwH9mJQeykZQK2cDn4IBnrmJw/132;comment:用户头像"` // 用户头像
+	SideMode     string               `json:"sideMode"  gorm:"comment:用户侧边主题"`                                                                                                                                         // 用户侧边主题
+	Enable       int                  `json:"enable" gorm:"comment:冻结用户"`                                                                                                                                              //冻结用户
 	Authorities  []model.SysAuthority `json:"-" gorm:"many2many:sys_user_authority;"`
 }

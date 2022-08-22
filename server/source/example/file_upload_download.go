@@ -43,8 +43,8 @@ func (i *initExaFileMysql) InitializeData(ctx context.Context) (context.Context,
 		return ctx, system.ErrMissingDBContext
 	}
 	entities := []example.ExaFileUploadAndDownload{
-		{Name: "10.png", Url: "https://qmplusimg.henrongyi.top/gvalogo.png", Tag: "png", Key: "158787308910.png"},
-		{Name: "logo.png", Url: "https://qmplusimg.henrongyi.top/1576554439myAvatar.png", Tag: "png", Key: "1587973709logo.png"},
+		{Name: "10.png", Url: "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJ5Ozf1ziaeRmMcxDnsAuu8QOqdtAQ8OMt2BMQRldfshgpQnaga1bQwH9mJQeykZQK2cDn4IBnrmJw/132", Tag: "png", Key: "158787308910.png"},
+		{Name: "logo.png", Url: "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKaf4N9IvVDRxzBr1FIeE4UhZd6kZ2Ngq3qBmu3FiaGlfhDmfnCu98larMP5MnPq8iaESZb1p0Zwsqw/132", Tag: "png", Key: "1587973709logo.png"},
 	}
 	if err := db.Create(&entities).Error; err != nil {
 		return ctx, errors.Wrap(err, example.ExaFileUploadAndDownload{}.TableName()+"表数据初始化失败!")
